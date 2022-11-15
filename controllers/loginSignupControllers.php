@@ -2,10 +2,6 @@
 
 //Verifica il corretto inserimento dei dati
 
-use LDAP\Result;
-
-
-
 function verifyData()
 {
     $result = [
@@ -73,12 +69,11 @@ function login()
         $res = verifyUserLogin($result['email'], $result['password'], $result['name']);
         if($res['success']) {
             $_SESSION['userloggedin'] = 1;
-            //Azzera csrf
-            unset($_SESSION['csrf']);
-          
             $_SESSION['email'] =  $result['email'];
             $_SESSION['id'] = $res ['data'] ['id'];
             $_SESSION['name'] =  $result['name'];
+            //Azzera csrf
+            unset($_SESSION['csrf']);
 
         };
         return $res;

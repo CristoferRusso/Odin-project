@@ -10,7 +10,7 @@ function isValidToken($token){
 }
 
 //Funzione che controlla se l'user è loggato 
-function isUserLoggedIn():int {
+function isUserLoggedIn(){
    //Ritornerà un valore numerico (1-0)
    return $_SESSION['userloggedin'] ?? 0;
 }

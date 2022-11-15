@@ -22,18 +22,26 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
+      <?php if (!empty($_SESSION['userloggedin'])) {
+         ?>
         <li class="nav-item ">
-          <a class="nav-link" href="#">Your timeline <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="index.php">Timeline <span class="sr-only">(current)</span></a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link" id='yourPost' href="yourPost.php">Your posts</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Your thoughts</a>
+          <a class="nav-link" id='' href="">Who you follow</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">Public profiles</a>
+          <a class="nav-link " href="#">Options</a>
         </li>
+        <?php } ?>
       </ul>
  
-        <?php     
+        <?php    
+
         //Se l'utente risulta in sessione (Ha fatto il login) la finetra modale di login/signup sarà sostituito da quello di logout
         if(empty($_SESSION['userloggedin'])){
         

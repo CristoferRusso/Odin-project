@@ -15,7 +15,7 @@
           <input type="hidden" name="action" id='action' value="login">
           <input type="hidden" name="csrf" value='<?= $_SESSION['csrf'] ?>'>
           <div class="form-group">
-            <h4 style='color:rgba(101, 110, 194, 0.932);'>First social platform where you can share whatever you want, whatever your opinion on any topic Odin will not judge you.</h4>
+            <h6 style='color:rgba(101, 110, 194, 0.932);'>First social platform where you can share your political opinion. Whatever your worldview is, the OdinWorld team won't judge you.</h6>
             <label for="email">Email </label>
             <input type="email" class="form-control" placeholder="email address" id="email" name='email' aria-describedby="emailHelp">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>

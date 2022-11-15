@@ -1,7 +1,7 @@
 <?php
 session_start();
-error_reporting(0);
-require 'models/rumors.php';
+
+require 'models/userPost.php';
 //Genera un numero randomico in binario(Viene creato un token in sessione per impedire la creazione di un pofilo da siti terzi)
 //Guardare header.php e login.php
 //Il token verrà inviato con la chiamata
@@ -13,6 +13,7 @@ $_SESSION['csrf'] = $token;
 
 
 }
+
 require 'views/header.php';
 $user_id = $_REQUEST['user_id'] ?? 0;
 $search= $_REQUEST['filter'] ?? '';
