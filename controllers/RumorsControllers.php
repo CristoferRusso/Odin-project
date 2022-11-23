@@ -174,5 +174,10 @@ function getPostTpl(array $post) {
  return $htmlpost;
  
  }
+
+ function flag() {
+    $_SESSION['flag'] = $_POST['yourPostFlag'];
+    
+ }
  
 

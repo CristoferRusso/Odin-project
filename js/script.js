@@ -20,11 +20,12 @@ $('#news #btnfollow').click(function(evt) {
 
         success: function (data) {
             
+           
             //JSON.parse converte la stringa che si riceve in risposta dal serve in un oggetto javascript
             const result = JSON.parse(data);
             //Cambia la visualizzazione dei pulsanti 
             if (result.success) {
-              
+               
                 following = result.following;
             if(result.following) {
                 ele.attr('data-following', 1);
@@ -42,6 +43,7 @@ $('#news #btnfollow').click(function(evt) {
            
          
         }
+        location.href = 'index.php';
     }
     
         });
@@ -141,10 +143,4 @@ $('#filterPost #filterPostbtn').click(function(evt) {
     }
     })
    
-})
-$('#navbarCollapse #yourPost').click(function(evt) {
-    evt.preventDefault();
-    location.href = 'yourPost.php';
-    let title = $('#userRumorsTitle');
-    title.text = 'your new title';
 })

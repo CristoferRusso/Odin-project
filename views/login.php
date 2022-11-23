@@ -70,6 +70,7 @@
   //Esegue la chiamata ajax per inviare i dati al server
   $('#loginSignupButton').click(function(evt) {
     evt.preventDefault();
+    
     $.ajax({
       //Dati per l'invio 
       method: 'POST',
@@ -80,6 +81,7 @@
       success: function(data) {
         const result = JSON.parse(data);
         alert(result.msg);
+    
         if (result.success) {
           location.href = 'index.php';
         }

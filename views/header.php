@@ -27,12 +27,13 @@
         <li class="nav-item ">
           <a class="nav-link" href="index.php">Timeline <span class="sr-only">(current)</span></a>
         </li>
-      
+       <form action="post" id="flag">
         <li class="nav-item">
-          <a class="nav-link" id='yourPost' href="yourPost.php">Your posts</a>
+          <a class="nav-link" id='yourPost' href="indexRumors.php">Your posts</a>
+        </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id='' href="">Who you follow</a>
+          <a class="nav-link" id='' href="indexFollow.php">Who you follow</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="#">Options</a>

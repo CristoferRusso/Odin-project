@@ -11,6 +11,7 @@ function verifyData()
     ];
     //Controlla che sia presente il token
     $token = $_POST['csrf'] ?? '';
+
     if(!isValidToken($token)) {
         $result ['success'] = 0;
         $result ['msg'] = 'Invalid request';
@@ -145,7 +146,7 @@ function signup()
     if ($result['success']) {
         $res = insertUser($result['email'], $result['password'], $result['name']);
         if($res['success']) {
-            $_SESSION['userloggedin'] = 1;
+            $_SESSION['userloggedin'] = 0;
             $_SESSION['email'] =  $result['email'];
             $_SESSION['name'] =   $result['name'];
             unset($_SESSION['csrf']);
@@ -172,7 +173,7 @@ function insertUser($email, $password,$name)
 
     try{
 
-    //Controlla che l'utente sia già registrato//    
+    
     $conn = dbConnect();
     //Query
     $sql = 'SELECT email FROM users WHERE email =? ';
@@ -200,7 +201,7 @@ function insertUser($email, $password,$name)
     $stm = $conn->prepare($sql);
     $res = $stm->execute([':email' => $email, ':password' => $password, ':name' => $name]);
     if ($res && $stm->rowCount()) {
-        $result['msg'] = 'User registered correctly';
+        $result['msg'] = 'User registered correctly, login to post something';
         return $result;
     } else {
         $result['msg'] = 'Problem inserting user';
